@@ -1,25 +1,365 @@
-body {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: calc(0.8em + 0.5vw);
+  color: #38004d;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
 .app {
-	display: flex;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;	
+}
+
+/* Login */
+
+.login {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  width: 90vw;
+  height: 90vh ;
+  border: 1px solid #8860D0;
+  box-shadow: 0px 10px 14px -7px #8860D0;
+  border-radius: 4px;
+  margin: 0;
+  text-align: center;
+  margin-top: 2em;
+}
+.login__header {
+  padding: 2%;
+  background-color: #C1C8E4;
+  width: 100%;
+  color: #38004d;
+}
+.login__select {
+  width: 90%;
+  margin: auto;
+}
+.login__select__img {
+  border-radius:50%;
+  width: 1em;
+  height: 1em;
+}
+.login__button {
+  box-shadow: 0px 10px 14px -7px #8860D0;
+  background-color:#C1C8E4;
+  cursor:pointer;
+  color:#38004d;
+  font-size:20px;
+  padding:13px 32px;
+  text-decoration:none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  border: 1px solid #8860D0;
+  border-radius:8px;
+  margin: 2em;
+}
+.login__button:hover {
+  background-color:#6ed3cf;
+  outline: none;
+}
+.login__button:focus {
+  background-color:#6ed3cf;
+  outline: none;
+}
+.login__img {
+  width: 10em;
+  height: 10em;
+  margin: 1em auto 1em auto;
+}
+@media only screen and (min-width: 768px) {
+.login {
+  width: 50vw;
+  height: 80vh;
+}
+}
+
+/* Home */
+
+.home {
+  display: flex;
+  flex-flow: column wrap;
+  width: 90vw;
+  border: 1px solid #8860D0;
+  text-align: center;
+  box-shadow: 0px 10px 14px -7px #8860D0;
+}
+.home__toggle {
+  display: flex;
+  flex-flow: row wrap;
+  
+}
+.home__button {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color:#C1C8E4;
+  color: #38004d;
+  font-size: 0.8em;
+  width: 50%;
+  height: 4em;
+  outline: 0;
+  border: 0;
+}
+.home__button:focus {
+  outline: 0;
+  border-bottom: none;
+  background-color: white;
+}
+.home__main {
+  width: 80vw;
+  margin: auto;
+}
+@media only screen and (min-width: 768px) {
+.home {
+  width: 50vw;
+  text-align: center;
+  margin: auto;
+}
+.home__toggle {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50vw;
+  margin: auto;
+}
+.home__main {
+	width: 50vw;
 	margin: auto;
+}
+}
+
+/*PoolPreview*/
+
+.poll {
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid #8860D0;
+  margin: 2em auto;
+  box-shadow: 0px 10px 14px -7px #8860D0;
+  width: 80vw;
+  text-align: center;
+}
+.poll__header {
+  display: flex;
+  width: 100%;
+  height:2.5em;
+  background-color: #C1C8E4;
+  margin: 0;
+  padding: 0.5em;
+  text-align: left;
+}
+.poll__card {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em;
+}
+.poll__card__img {
+  flex:1;
+  align-self: center;
+  text-align: center;
+  border-radius:50%;
+  width: 5em;
+  height: 5em;
+}
+.poll__card__details {
+  flex: 2;
+  padding: 1em;
+}
+.poll__card__details__header {
+  padding: 0.5em;
+  font-weight: bold;
+}
+.poll__card__details__poll {
+  padding: 1em;
+  font-size:0.8em;
+  text-align: center;
+}
+.poll__button {
+  padding: 0.5em;
+  text-align: center;
+  width: 70%;
+  height: 3em;
+  background-color: #C1C8E4;
+  color: #38004d;
+  box-shadow: 0px 10px 14px -7px #8860D0;
+  border: 1px solid #8860D0;
+  border-radius:8px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 2em;
+}
+.poll__button:hover {
+  background-color:#6ed3cf;
+  outline: none;
+}
+.poll__button:focus {
+  outline: none;
+}
+@media only screen and (min-width: 768px) {
+.poll {
+  width: 45vw;
+  margin: 2em auto;	
+}
+}
+
+/*nav */
+
+.nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0;
+  border-bottom: 1px solid #8860D0;
+  margin: auto;
+  margin-bottom: 2em;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav__menu--left {
+  display: flex;
+  list-style: none;
+}
+.nav__menu--right {
+  display: flex;
+  list-style: none;
+}
+.nav__link {
+  padding: 0 0.7em 0 0.7em;
+  margin: 0.5em;
+}
+.nav__link__img {
+  border-radius:50%;
+  width: 2em;
+  height: 2em;
+}
+.nav__link__button {
+  padding: 0.5em;
+  text-align: center;
+  background-color: #C1C8E4;
+  color: #38004d;
+  border: 1px solid #8860D0;
+  border-radius:8px;
+  width: 7em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.nav__link__button:hover {
+  background-color:#6ed3cf;
+  outline: none;
+}
+@media only screen and (min-width: 768px) {
+.nav {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+	
+}
+}
+
+/* NewQuestion */
+
+.poll__new__header1 {
+	margin: 1em;
+	text-align: left;
+}
+.poll__new__header2 {
+	text-align: center;
+	font-weight: bold;
+}
+.poll__new__form {
+	text-align: center;
+	padding: 2em;
+}
+.poll__new__form__input {
+	margin: 0.5em;
+	height: 2.5em;
+	padding: 0.5em;
+}
+@media only screen and (min-width: 768px) {
+.poll__new__form__input {
+	margin: 1em;
+	height: 2.5em;
+	padding: 1em;
+}
+}
+
+/* LeaderBoard */
+
+.leaderboard {
+	display: flex;
+	flex-flow: column wrap;
+	width: 90vw;
+}
+.leaderboard__card {
+	display: flex;
+	flex-flow: row wrap;
+	border: 1px solid #8860D0;
+	margin: 1em auto 1em auto;
+	box-shadow: 0px 10px 14px -7px #8860D0;
+	width: 100%;
+	padding: 1em;
+}
+.leaderboard__img {
+	flex: 1;
+	align-self: center;
+	text-align: center;
+	border-radius:50%;
+	width: 5em;
+	height: 5em;
+}
+.leaderboard__user {
+	flex: 3;
 	text-align: center;
 }
-.login {
-	width: 50%;
-	height: 50vh;
-	border: 1px solid black;
+.leaderboard__score {
+	flex: 1;
+	align-self: center;
+	font-weight: bold;
+}
+.leaderboard__question {
+	display: flex;
+	flex-flow: column wrap;
+}
+.leaderboard__header {
+	font-weight: bold;
+	margin: 1em;
+}
+@media only screen and (min-width: 768px) {
+.leaderboard {
+	width: 50vw;
+	text-align: center;
 	margin: auto;
+}
+}
+
+/* PollResult */
+
+.poll__result__header {
+	font-weight: bold;
+	margin: 1em;
+	text-align: left;
+}
+.poll__result__question {
+	text-align: left;
+	margin-left: 5em;
+}
+.poll__result__total {
+	text-align: center;
+}
+.poll__result__progressbar {
+	height: 3em;
+}
+.result__button {
+	margin:  2em auto;
 }
