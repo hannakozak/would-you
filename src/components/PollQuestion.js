@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {handleSaveAnswer} from '../actions/shared.js';
+import { Redirect } from 'react-router-dom';
 
 export class PollQuestion extends React.Component {
 	
@@ -22,10 +23,14 @@ export class PollQuestion extends React.Component {
     }
   
   render() {
-	const { question, author } = this.props;
+	if (this.props.badPath) {
+            return <Redirect to='/page404' />
+    }
+	
+	const { question, author} = this.props;	
 	const { optionOne, optionTwo} = question;
 	const { name, avatarURL } = author;
-      
+	
 	  return (
         <div className="poll"> 
           <div className="poll__header"> { name } asks:</div>
@@ -47,7 +52,12 @@ export class PollQuestion extends React.Component {
 
   function mapStateToProps({ authedUser, questions, users }, { id }) {
 	const question = questions[id];
+	let badPath = false;
+	if (question === undefined) {
+      badPath = true;
+	 }
 	return {
+	  badPath,
       authedUser,
 	  users,
 	  questions,
