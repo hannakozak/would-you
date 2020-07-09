@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-export class NoMatch extends React.Component {
+export class Page404 extends React.Component {
 
   render() {
 	return (
-	  <div className="poll">No Match 404 Error</div>
+	  <div className="poll__404">Sorry! Page doesn't exist!</div>
 	)
   }
 }
 
-export default connect()(NoMatch);
+export default connect()(Page404);

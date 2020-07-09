@@ -27,6 +27,7 @@ class App extends React.Component {
 				  <Route path='/questions/:id' component={PollCard} />
 				  <Route path='/add' component={ NewQuestion } />
                   <Route path='/leaderboard' component={LeaderBoard} />
+				  <Route path='/page404' component={Page404} />
 				  <Route component={Page404} />
                 </Switch>
             </div>

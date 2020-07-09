@@ -10,6 +10,7 @@ class PollCard extends React.Component {
 	const answered = authedUserAnsweres.hasOwnProperty(id) ? true : false;
 
 	  return (
+	  
 		<div>			
 		  {answered ? <PollResult id={ id } /> : <PollQuestion id={ id } />}
 		</div>
@@ -25,3 +26,4 @@ class PollCard extends React.Component {
   }
 
 export default connect(mapStateToProps)(PollCard);
+
